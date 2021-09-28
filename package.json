@@ -1,0 +1,12 @@
+{
+  "name": "clothing-ecomerce-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Pranjali Murdeshwar",
+  "license": "MIT",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "description": ""
+}
