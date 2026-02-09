@@ -1,5 +1,5 @@
 .collection-item {
-  width: 22%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   height: 350px;
@@ -12,6 +12,7 @@
     background-size: cover;
     background-position: center;
     margin-bottom: 5px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   }
 
   .custom-button {
@@ -24,7 +25,8 @@
 
   &:hover {
     .image {
-      opacity: 0.8;;
+      opacity: 0.8;
+      transform: scale(1.05); /* Zoom effect */
     }
 
     .custom-button {
