@@ -1,13 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import { withRouter } from 'react-router-dom';
 
+import CustomButton from '../../components/custom-button/custom-button.component';
 import { selectCartItems, selectCartTotal } from '../../redux/cart/cart.selectors';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 
 import './checkout.styles.scss';
 
-const CheckoutPage = ({ cartItems, total }) => {
+const CheckoutPage = ({ cartItems, total, history }) => {
   console.log('CheckoutPage RENDER', { cartItems, total });
   return (
   <div className='checkout-page'>
@@ -32,6 +34,9 @@ const CheckoutPage = ({ cartItems, total }) => {
       <CheckoutItem key={cartItem.id} cartItem={cartItem} />
     ))}
     <div className='total'>TOTAL: ${total}</div>
+    <div className='payment-button'>
+      <CustomButton onClick={() => history.push('/payment')}>Pay Now</CustomButton>
+    </div>
   </div>
 );
 }
@@ -41,4 +46,4 @@ const mapStateToProps = createStructuredSelector({
   total: selectCartTotal
 });
 
-export default connect(mapStateToProps)(CheckoutPage);
+export default withRouter(connect(mapStateToProps)(CheckoutPage));

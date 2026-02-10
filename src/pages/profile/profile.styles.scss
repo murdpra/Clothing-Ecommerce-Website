@@ -1,0 +1,51 @@
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  width: 850px;
+  margin: 30px auto;
+
+  .title {
+    margin: 10px 0;
+  }
+
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid var(--sub-text-color);
+    border-radius: 5px;
+    background-color: var(--card-background);
+
+    .detail-group {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--sub-text-color);
+      padding: 15px 0;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .label {
+        font-weight: bold;
+        font-size: 18px;
+        color: var(--text-color);
+      }
+
+      .value {
+        font-size: 18px;
+        color: var(--sub-text-color);
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 90vw;
+    
+    .profile-details {
+      padding: 10px;
+    }
+  }
+}

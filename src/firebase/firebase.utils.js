@@ -34,6 +34,21 @@ export const createUserProfileDocument = async(userAuth, additionalData) => {
     return userRef;
 };
 
+export const createOrderDocument = async (order) => {
+  if (!order) return;
+  const orderRef = firestore.collection('users').doc(order.userId).collection('orders').doc();
+  const createdAt = new Date();
+  try {
+    await orderRef.set({
+      createdAt,
+      ...order
+    });
+  } catch (error) {
+    console.log('error creating order', error.message);
+  }
+  return orderRef;
+};
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
