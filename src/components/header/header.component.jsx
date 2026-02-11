@@ -3,7 +3,7 @@ import './header.styles.scss';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { Link, useHistory } from 'react-router-dom';
-import  { ReactComponent as Logo } from '../../assets/crown.svg';
+
 import { auth } from '../../firebase/firebase.utils';
 import { connect } from 'react-redux';
 import { clearCart } from '../../redux/cart/cart.actions';
@@ -24,7 +24,10 @@ const Header = ({ currentUser, hidden, clearCart }) => {
     return (
     <div className='header'>
         <Link className='logo-container' to='/'>
-            <Logo className='logo' />
+            <div className='logo-text'>
+                <span className='brand-name'>P.M. Signature</span>
+                <span className='tagline'>Wear Your Confidence</span>
+            </div>
         </Link>
     <div className='options'>
         <Link className='option' to='/shop'>
